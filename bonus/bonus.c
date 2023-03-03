@@ -6,7 +6,7 @@
 /*   By: akusniak <akusniak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/02 16:23:39 by akusniak          #+#    #+#             */
-/*   Updated: 2023/03/03 12:16:13 by akusniak         ###   ########.fr       */
+/*   Updated: 2023/03/03 15:20:41 by akusniak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ void	ft_read_instruction(t_data *data)
 		else
 		{
 			free(command);
-			ft_leave_clean(data, PRINT_ERROR_MESSAGE, EXIT);
+			ft_leave_bonus(data, PRINT_ERROR_MESSAGE, EXIT);
 		}
 		command = ft_gnl(0);
 	}

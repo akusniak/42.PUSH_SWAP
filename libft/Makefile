@@ -6,7 +6,7 @@
 #    By: akusniak <akusniak@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/22 10:27:15 by akusniak          #+#    #+#              #
-#    Updated: 2023/02/14 11:28:30 by akusniak         ###   ########.fr        #
+#    Updated: 2023/03/03 15:42:02 by akusniak         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -82,7 +82,7 @@ BONUS = ft_lstnew.c\
 OBJS			= $(SRCS:.c=.o)
 BONUS_OBJS		= $(BONUS:.c=.o)
 
-CC				= cc
+CC				= @cc
 RM				= rm -f
 CFLAGS			= -Wall -Wextra -Werror -I.
 
@@ -92,7 +92,7 @@ NAME			= libft.a
 		${CC} ${CFLAGS} -c $< -o ${<:.c=.o}
 
 $(NAME): $(OBJS)
-		ar rcs $(NAME) $(OBJS)
+		@ar rcs $(NAME) $(OBJS)
 
 all: $(NAME)
 
@@ -105,6 +105,6 @@ fclean: clean
 re: fclean all
 
 bonus: $(OBJS) $(BONUS_OBJS)
-		ar rcs $(NAME) $(OBJS) $(BONUS_OBJS)
+		@ar rcs $(NAME) $(OBJS) $(BONUS_OBJS)
 
 .PHONY: all clean fclean re bonus

@@ -1,8 +1,10 @@
 NAME = push_swap
 CHECKER = checker
 
-CC = cc
+CC = @cc
 CFLAGS = -Wall -Wextra -Werror
+
+COLOUR_GREEN=\033[0;32m
 
 RM = rm -f
 
@@ -40,7 +42,7 @@ SRCS_BONUS = bonus/bonus.c\
 OBJS = $(SRCS:.c=.o)
 OBJS_BONUS =  $(SRCS_BONUS:.c=.o)
 
-LIB = make bonus -C ./libft
+LIB = @make bonus -C ./libft
 
 .c.o :
 		${CC} ${CFLAGS} -c $< -o ${<:.c=.o}
@@ -48,6 +50,7 @@ LIB = make bonus -C ./libft
 $(NAME) : $(OBJS)
 				$(LIB)
 				$(CC) $(CFLAGS) $(OBJS) libft/libft.a -o $(NAME)
+				@echo "$(COLOUR_GREEN)Compilation is done"
 
 lib :
 		$(LIB)
