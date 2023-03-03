@@ -6,7 +6,7 @@ CFLAGS = -Wall -Wextra -Werror
 
 COLOUR_GREEN=\033[0;32m
 
-RM = rm -f
+RM = @rm -f
 
 SRCS =	action.c\
 		data.c\
@@ -50,7 +50,7 @@ LIB = @make bonus -C ./libft
 $(NAME) : $(OBJS)
 				$(LIB)
 				$(CC) $(CFLAGS) $(OBJS) libft/libft.a -o $(NAME)
-				@echo "$(COLOUR_GREEN)Compilation is done"
+				@echo "$(COLOUR_GREEN) $(NAME) compilation is done"
 
 lib :
 		$(LIB)
@@ -61,13 +61,16 @@ all :
 bonus : $(OBJS_BONUS)
 			$(LIB)
 			$(CC) $(CFLAGS) $(OBJS_BONUS) libft/libft.a -o $(CHECKER)
+			@echo "$(COLOUR_GREEN) $(CHECKER) compilation is done"
 
 clean :
 		$(RM) $(OBJS) $(OBJS_BONUS)
+		@echo "$(COLOUR_GREEN) clean is done"
 
 fclean : clean
 		$(RM) $(NAME) $(CHECKER)
-		cd ./libft && make fclean
+		@cd ./libft && make fclean
+		@echo "$(COLOUR_GREEN) fclean is done"
 
 re : fclean all
 

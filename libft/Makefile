@@ -10,6 +10,7 @@
 #                                                                              #
 # **************************************************************************** #
 
+COLOUR_GREEN=\033[0;32m
 
 SRCS =	ft_isalpha.c\
 	ft_isdigit.c\
@@ -83,7 +84,7 @@ OBJS			= $(SRCS:.c=.o)
 BONUS_OBJS		= $(BONUS:.c=.o)
 
 CC				= @cc
-RM				= rm -f
+RM				= @rm -f
 CFLAGS			= -Wall -Wextra -Werror -I.
 
 NAME			= libft.a
@@ -93,6 +94,7 @@ NAME			= libft.a
 
 $(NAME): $(OBJS)
 		@ar rcs $(NAME) $(OBJS)
+		@echo "$(COLOUR_GREEN) $(NAME) is created"
 
 all: $(NAME)
 
@@ -106,5 +108,6 @@ re: fclean all
 
 bonus: $(OBJS) $(BONUS_OBJS)
 		@ar rcs $(NAME) $(OBJS) $(BONUS_OBJS)
+		@echo "$(COLOUR_GREEN) $(NAME) *bonus* is created"
 
 .PHONY: all clean fclean re bonus
