@@ -6,7 +6,7 @@
 /*   By: akusniak <akusniak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/13 11:05:27 by akusniak          #+#    #+#             */
-/*   Updated: 2023/03/03 12:09:07 by akusniak         ###   ########.fr       */
+/*   Updated: 2023/03/04 15:09:36 by akusniak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -147,8 +147,11 @@ void	ft_swap(t_data *data, int instruction, int print);
 void	ft_too_different(t_data *data, t_best *best, t_cost *cost);
 void	ft_sort(t_data *data, t_data *hide);
 void	ft_big_sort(t_data *data, t_data *hide);
-void	ft_prepare_stack(t_data *data);
+void	ft_prepare_stack(t_data *data, t_data *hide);
 void	ft_correct_moove(t_data *data, t_cost *cost, t_best *best,
 			t_data *hide);
+void 	ft_organize_stack(t_data *data, t_data *hide);
+int		ft_who_push(t_data *data, int pivot);
+
 
 #endif

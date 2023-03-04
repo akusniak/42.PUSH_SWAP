@@ -6,7 +6,7 @@
 /*   By: akusniak <akusniak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/13 11:05:24 by akusniak          #+#    #+#             */
-/*   Updated: 2023/03/03 11:55:53 by akusniak         ###   ########.fr       */
+/*   Updated: 2023/03/04 13:59:00 by akusniak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,10 +20,13 @@ void	ft_correct_moove(t_data *data, t_cost *cost, t_best *best,
 	ft_execution(data, cost, best);
 }
 
-void	ft_prepare_stack(t_data *data)
+void	ft_prepare_stack(t_data *data, t_data *hide)
 {
-	while (data->len_a > 3)
-		ft_push(data, PB, PRINT);
+	if (data->len_a < 200)
+		while (data->len_a > 3)
+			ft_push(data, PB, PRINT);
+	else
+	 	ft_organize_stack(data, hide);
 	if (ft_is_sorted(data->a, data->len_a) == NO)
 		ft_sort_three(data);
 }
@@ -37,9 +40,7 @@ void	ft_big_sort(t_data *data, t_data *hide)
 	best = NULL;
 	cost = malloc(sizeof(t_cost));
 	if (cost == NULL)
-	{
 		return ;
-	}
 	best = malloc (sizeof(t_best));
 	if (best == NULL)
 	{
@@ -47,7 +48,7 @@ void	ft_big_sort(t_data *data, t_data *hide)
 		return ;
 	}
 	ft_brute_sort(hide);
-	ft_prepare_stack(data);
+	ft_prepare_stack(data, hide);
 	while (data->len_b != 0)
 		ft_correct_moove(data, cost, best, hide);
 	ft_put_little_at_start(data, hide);
