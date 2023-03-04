@@ -19,10 +19,10 @@ void	ft_organize_stack(t_data *data, t_data *hide)
 
 	pivot = hide->a[hide->len_a / 2];
 	stop = (hide->len_a / 2);
-	ft_send_half(data, hide, pivot, stop);
+	ft_send_half(data, pivot, stop);
 	pivot = hide->a[(int)(hide->len_a * 0.75)];
 	stop = (int)(hide->len_a * 0.75);
-	ft_send_half(data, hide, pivot, stop);
+	ft_send_half(data, pivot, stop);
 	while (data->len_a > 3)
 		ft_push(data, PB, PRINT);
 }
@@ -56,7 +56,7 @@ int	ft_who_push(t_data *data, int pivot)
 		return (candidat1);
 }
 
-void	ft_send_half(t_data *data, t_data *hide, int pivot, int stop)
+void	ft_send_half(t_data *data, int pivot, int stop)
 {
 	int	to_push;
 

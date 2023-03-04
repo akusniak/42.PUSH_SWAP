@@ -42,10 +42,10 @@ int	ft_set_data(t_data *data, char **argv)
 	block = 0;
 	while (argv[++i] != NULL)
 	{
-		if (ft_is_integer(ft_atol(argv[i])) == YES
-			&& ft_is_duplicate(ft_atol(argv[i]), block, data->a) == NO)
+		if (ft_is_integer(ft_atoll(argv[i])) == YES
+			&& ft_is_duplicate(ft_atoll(argv[i]), block, data->a) == NO)
 		{
-			data->a[block++] = ft_atol(argv[i]);
+			data->a[block++] = ft_atoll(argv[i]);
 		}
 		else
 			return (KO);
