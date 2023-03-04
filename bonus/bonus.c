@@ -89,6 +89,7 @@ int	ft_command_check(char *command)
 
 void	ft_execute(char *command, t_data *data)
 {
+	// check si A est vide et que B est vide, bloquer l'instruction(enfin l'afficher mais ne pas la faire)
 	if (ft_strncmp(command, "sa\n", 3) == 0)
 		ft_swap_bonus(data, SA, NO_PRINT);
 	else if (ft_strncmp(command, "sb\n", 3) == 0)
