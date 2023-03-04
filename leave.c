@@ -21,11 +21,20 @@ void	ft_print_error_and_exit(void)
 void	ft_leave(t_data *data, int error_message, int action)
 {
 	if (data->a)
+	{
 		free(data->a);
+		data->a = NULL;
+	}
 	if (data->b)
+	{
 		free(data->b);
+		data->b = NULL;
+	}
 	if (data)
+	{
 		free(data);
+		data = NULL;
+	}
 	if (error_message == PRINT_ERROR_MESSAGE)
 		write(2, "Error\n", 6);
 	if (action == EXIT)
