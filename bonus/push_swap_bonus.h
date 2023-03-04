@@ -6,7 +6,7 @@
 /*   By: akusniak <akusniak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/03 12:09:54 by akusniak          #+#    #+#             */
-/*   Updated: 2023/03/03 12:18:26 by akusniak         ###   ########.fr       */
+/*   Updated: 2023/03/04 11:21:00 by akusniak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,8 +61,7 @@
 # define INCREASE 1
 
 # define GOOD_COMMAND 1
-# define TO_BIG_TO_BE_A_COMMAND 2
-# define WRONG_COMMAND 3
+# define WRONG_COMMAND -1
 
 typedef struct s_type
 {
