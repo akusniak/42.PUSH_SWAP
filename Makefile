@@ -50,7 +50,16 @@ LIB = @make bonus -C ./libft
 $(NAME) : $(OBJS)
 				$(LIB)
 				$(CC) $(CFLAGS) $(OBJS) libft/libft.a -o $(NAME)
-				@echo "$(COLOUR_GREEN) $(NAME) compilation is done"
+				@echo "  _____  _    _  _____ _    _    _______          __     _____  ";
+				@echo " |  __ \| |  | |/ ____| |  | |  / ____\ \        / /\   |  __ \ ";
+				@echo " | |__) | |  | | (___ | |__| | | (___  \ \  /\  / /  \  | |__) |";
+				@echo " |  ___/| |  | |\___ \|  __  |  \___ \  \ \/  \/ / /\ \ |  ___/ ";
+				@echo " | |    | |__| |____) | |  | |  ____) |  \  /\  / ____ \| |     ";
+				@echo " |_|     \____/|_____/|_|  |_| |_____/    \/  \/_/    \_\_|     ";
+				@echo "                                                                ";
+				@echo "                                                                ";
+
+
 
 lib :
 		$(LIB)
@@ -61,7 +70,15 @@ all :
 bonus : $(OBJS_BONUS)
 			$(LIB)
 			$(CC) $(CFLAGS) $(OBJS_BONUS) libft/libft.a -o $(CHECKER)
-			@echo "$(COLOUR_GREEN) $(CHECKER) compilation is done"
+			@echo "   _____ _    _ ______ _____ _  ________ _____  ";
+			@echo "  / ____| |  | |  ____/ ____| |/ /  ____|  __ \ ";
+			@echo " | |    | |__| | |__ | |    | ' /| |__  | |__) |";
+			@echo " | |    |  __  |  __|| |    |  < |  __| |  _  / ";
+			@echo " | |____| |  | | |___| |____| . \| |____| | \ \ ";
+			@echo "  \_____|_|  |_|______\_____|_|\_\______|_|  \_\ ";
+			@echo "                                                ";
+			@echo "                                                ";
+
 
 clean :
 		$(RM) $(OBJS) $(OBJS_BONUS)
