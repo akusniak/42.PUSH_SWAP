@@ -12,39 +12,19 @@
 
 #include "includes/push_swap.h"
 
-void ft_organize_stack(t_data *data, t_data *hide)
+void	ft_organize_stack(t_data *data, t_data *hide)
 {
 	int	pivot;
-	int	to_push;
+	int	stop;
 
 	pivot = hide->a[hide->len_a / 2];
-	while (data->len_b < (hide->len_a / 2))
-	{
-		to_push = ft_who_push(data, pivot);
-		while (ft_is_first(data->a, to_push) == NO)
-		{
-			if (ft_action(data->a, data->len_a, to_push, TYPE) == ROTATE)
-				ft_rotate(data, RA, PRINT);
-			else
-				ft_r_rotate(data, RRA, PRINT);
-		}
-		ft_push(data, PB, PRINT);
-	}
+	stop = (hide->len_a / 2);
+	ft_send_half(data, hide, pivot, stop);
 	pivot = hide->a[(int)(hide->len_a * 0.75)];
-	while (data->len_b < ((int)(hide->len_a * 0.75)))
-	{
-		to_push = ft_who_push(data, pivot);
-		while (ft_is_first(data->a, to_push) == NO)
-		{
-			if (ft_action(data->a, data->len_a, to_push, TYPE) == ROTATE)
-				ft_rotate(data, RA, PRINT);
-			else
-				ft_r_rotate(data, RRA, PRINT);
-		}
-		ft_push(data, PB, PRINT);
-	}
+	stop = (int)(hide->len_a * 0.75);
+	ft_send_half(data, hide, pivot, stop);
 	while (data->len_a > 3)
-	 	ft_push(data, PB, PRINT);
+		ft_push(data, PB, PRINT);
 }
 
 int	ft_who_push(t_data *data, int pivot)
@@ -74,4 +54,23 @@ int	ft_who_push(t_data *data, int pivot)
 		return (candidat2);
 	else
 		return (candidat1);
+}
+
+void	ft_send_half(t_data *data, t_data *hide, int pivot, int stop)
+{
+	int	to_push;
+
+	to_push = 0;
+	while (data->len_b < stop)
+	{
+		to_push = ft_who_push(data, pivot);
+		while (ft_is_first(data->a, to_push) == NO)
+		{
+			if (ft_action(data->a, data->len_a, to_push, TYPE) == ROTATE)
+				ft_rotate(data, RA, PRINT);
+			else
+				ft_r_rotate(data, RRA, PRINT);
+		}
+		ft_push(data, PB, PRINT);
+	}
 }

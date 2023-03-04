@@ -94,7 +94,6 @@ NAME			= libft.a
 
 $(NAME): $(OBJS)
 		@ar rcs $(NAME) $(OBJS)
-		@echo "$(COLOUR_GREEN) $(NAME) is created"
 
 all: $(NAME)
 
@@ -108,6 +107,5 @@ re: fclean all
 
 bonus: $(OBJS) $(BONUS_OBJS)
 		@ar rcs $(NAME) $(OBJS) $(BONUS_OBJS)
-		@echo "$(COLOUR_GREEN) $(NAME) *bonus* is created"
 
 .PHONY: all clean fclean re bonus

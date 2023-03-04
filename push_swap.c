@@ -26,7 +26,7 @@ void	ft_prepare_stack(t_data *data, t_data *hide)
 		while (data->len_a > 3)
 			ft_push(data, PB, PRINT);
 	else
-	 	ft_organize_stack(data, hide);
+		ft_organize_stack(data, hide);
 	if (ft_is_sorted(data->a, data->len_a) == NO)
 		ft_sort_three(data);
 }

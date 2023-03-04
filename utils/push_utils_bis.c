@@ -41,20 +41,14 @@ void	ft_no_stack_ok_refill_pa(t_data *data)
 		return ;
 	new_b = malloc(sizeof(int) * data->len_b);
 	if (new_b == NULL)
-	{
-		free (new_b);
-		return ;
-	}
+		return (free(new_b));
 	new_a[0] = data->b[0];
 	ft_refill_looser(new_b, data->b, data->len_b + 1);
 	free(data->a);
 	free(data->b);
 	data->a = ft_intdup(new_a, data->len_a);
 	if (data->a == NULL)
-	{
-		free (new_b);
-		return ;
-	}
+		return (free(new_b));
 	data->b = ft_intdup(new_b, data->len_b);
 	if (data->b == NULL)
 		free (new_a);
@@ -89,20 +83,14 @@ void	ft_no_stack_ok_refill_pb(t_data *data)
 		return ;
 	new_a = malloc(sizeof(int) * data->len_a);
 	if (new_a == NULL)
-	{
-		free (new_b);
-		return ;
-	}
+		return (free(new_b));
 	new_b[0] = data->a[0];
 	ft_refill_looser(new_a, data->a, data->len_a + 1);
 	free(data->a);
 	free(data->b);
 	data->a = ft_intdup(new_a, data->len_a);
 	if (data->a == NULL)
-	{
-		free (new_b);
-		return ;
-	}
+		return (free(new_b));
 	data->b = ft_intdup(new_b, data->len_b);
 	if (data->b == NULL)
 		free (new_a);

@@ -150,8 +150,8 @@ void	ft_big_sort(t_data *data, t_data *hide);
 void	ft_prepare_stack(t_data *data, t_data *hide);
 void	ft_correct_moove(t_data *data, t_cost *cost, t_best *best,
 			t_data *hide);
-void 	ft_organize_stack(t_data *data, t_data *hide);
+void	ft_organize_stack(t_data *data, t_data *hide);
 int		ft_who_push(t_data *data, int pivot);
-
+void	ft_send_half(t_data *data, t_data *hide, int pivot, int stop);
 
 #endif
