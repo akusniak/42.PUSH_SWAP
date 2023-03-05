@@ -43,25 +43,24 @@ void	ft_read_instruction(t_data *data)
 	char	*command;
 
 	command = NULL;
-	while (1)
+	command = ft_gnl(0);
+	while (command != NULL)
 	{
-		command = ft_gnl(0);
-		if (ft_strncmp(command, "\n", 1) == 0)
-		{
-			if (ft_is_sorted(data->a, data->len_a) == YES)
-				ft_printf("OK\n");
-			else
-				ft_printf("KO\n");
-			ft_leave_bonus(data, command, NO_ERROR_MESSAGE, EXIT);
-		}
-		else if (ft_command_check(command) == GOOD_COMMAND)
+		if (ft_command_check(command) == GOOD_COMMAND)
 		{
 			ft_execute(command, data);
 			free(command);
+			command = ft_gnl(0);
 		}
 		else
 			ft_leave_bonus(data, command, PRINT_ERROR_MESSAGE, EXIT);
+		
 	}
+	if (ft_is_sorted(data->a, data->len_a) == YES)
+		ft_printf("OK\n");
+	else
+		ft_printf("KO\n");
+	ft_leave_bonus(data, command, NO_ERROR_MESSAGE, EXIT);
 }
 
 int	ft_command_check(char *command)
