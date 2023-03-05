@@ -6,7 +6,7 @@
 /*   By: akusniak <akusniak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/02 16:23:39 by akusniak          #+#    #+#             */
-/*   Updated: 2023/03/05 14:56:28 by akusniak         ###   ########.fr       */
+/*   Updated: 2023/03/05 15:20:26 by akusniak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -103,7 +103,7 @@ void	ft_execute(char *command, t_data *data)
 		ft_r_rotate_bonus(data, RRB, NO_PRINT);
 	}
 	else if (ft_strncmp(command, "rrr\n", 4) == 0)
-		ft_exec_rrr(command, data);
+		ft_exec_rrr(data);
 	else
 		ft_exec_rotate(command, data);
 }

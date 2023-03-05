@@ -6,7 +6,7 @@
 /*   By: akusniak <akusniak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/03 12:09:54 by akusniak          #+#    #+#             */
-/*   Updated: 2023/03/05 14:54:19 by akusniak         ###   ########.fr       */
+/*   Updated: 2023/03/05 15:19:53 by akusniak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -128,6 +128,9 @@ int		ft_is_inversed(int *stack, int len);
 int		ft_find_biggest(int *stack_a, int len);
 int		ft_find_small(int *stack_a, int len);
 void	ft_parsing_bonus(int argc, char **argv);
-void	ft_exec_rrr(char *command, t_data *data);
+void	ft_exec_rrr(t_data *data);
+void	ft_exec_swap(char *command, t_data *data);
+void	ft_exec_push(char *command, t_data *data);
+void	ft_exec_rotate(char *command, t_data *data);
 
 #endif
