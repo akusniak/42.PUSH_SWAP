@@ -54,7 +54,6 @@ void	ft_read_instruction(t_data *data)
 		}
 		else
 			ft_leave_bonus(data, command, PRINT_ERROR_MESSAGE, EXIT);
-		
 	}
 	if (ft_is_sorted(data->a, data->len_a) == YES)
 		ft_printf("OK\n");
