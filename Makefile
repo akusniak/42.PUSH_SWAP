@@ -36,6 +36,7 @@ SRCS_BONUS = bonus/bonus.c\
 		bonus/utils_bonus/push_utils_bis_bonus.c\
 		bonus/utils_bonus/push_utils_bonus.c\
 		bonus/utils_bonus/push_utils_terce_bonus.c\
+		bonus/utils_bonus/execute_bonus.c\
 		bonus/utils_bonus/operations_bonus/push_bonus.c\
 		bonus/utils_bonus/operations_bonus/rotate_bonus.c\
 		bonus/utils_bonus/operations_bonus/swap_bonus.c

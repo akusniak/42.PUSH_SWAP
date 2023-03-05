@@ -6,7 +6,7 @@
 /*   By: akusniak <akusniak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/03 12:09:54 by akusniak          #+#    #+#             */
-/*   Updated: 2023/03/04 11:21:00 by akusniak         ###   ########.fr       */
+/*   Updated: 2023/03/05 14:54:19 by akusniak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -121,11 +121,13 @@ void	ft_execute(char *command, t_data *data);
 t_data	*ft_init_data_bonus(int argc);
 int		ft_set_data_bonus(t_data *data, char **argv);
 void	ft_print_error_and_exit(void);
-void	ft_leave_bonus(t_data *data, int error_message, int action);
+void	ft_leave_bonus(t_data *data, char *command, int error_message,
+			int action);
 int		ft_is_sorted(int *stack, int len);
 int		ft_is_inversed(int *stack, int len);
 int		ft_find_biggest(int *stack_a, int len);
 int		ft_find_small(int *stack_a, int len);
 void	ft_parsing_bonus(int argc, char **argv);
+void	ft_exec_rrr(char *command, t_data *data);
 
 #endif
