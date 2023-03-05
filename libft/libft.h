@@ -6,7 +6,7 @@
 /*   By: akusniak <akusniak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/21 15:17:43 by akusniak          #+#    #+#             */
-/*   Updated: 2023/02/14 11:28:19 by akusniak         ###   ########.fr       */
+/*   Updated: 2023/03/05 15:27:22 by akusniak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,7 +86,7 @@ size_t		ft_putchar(char c);
 int			ft_putstr_printf(const char *str);
 int			ft_get_width(char *line, char separator, char end_of_line);
 int			*ft_alloc_simple_tab(int largeur);
-int			ft_is_integer(long number);
+int			ft_is_integer(long long number);
 int			ft_is_duplicate(int number, int current, int *stack_a);
 
 #endif

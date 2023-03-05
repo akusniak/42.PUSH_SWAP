@@ -6,7 +6,7 @@
 /*   By: akusniak <akusniak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/02 16:23:39 by akusniak          #+#    #+#             */
-/*   Updated: 2023/03/05 15:20:26 by akusniak         ###   ########.fr       */
+/*   Updated: 2023/03/05 15:56:22 by akusniak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,13 @@ int	main(int ac, char **av)
 		if (data == NULL)
 			exit(0);
 		ft_set_data_bonus(data, av);
+		if (ft_set_data_bonus(data, av) == KO)
+		{
+			free(data->a);
+			free(data);
+			ft_printf("Error\n");
+			return (1);
+		}
 		ft_read_instruction(data);
 		return (1);
 	}

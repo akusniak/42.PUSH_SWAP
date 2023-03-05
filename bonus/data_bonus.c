@@ -6,7 +6,7 @@
 /*   By: akusniak <akusniak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/03 12:16:30 by akusniak          #+#    #+#             */
-/*   Updated: 2023/03/05 14:54:28 by akusniak         ###   ########.fr       */
+/*   Updated: 2023/03/05 15:56:59 by akusniak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,28 @@ t_data	*ft_init_data_bonus(int argc)
 	return (data);
 }
 
+static int	ft_is_it_really_a_int(char *arg)
+{
+	int	i;
+	int	count;
+
+	i = 0;
+	count = 0;
+	if (arg[i] == '+' || arg[i] == '-')
+		i = i + 1;
+	while (arg[i] == '0')
+		i = i + 1;
+	while (arg[i] != '\0')
+	{
+		i = i + 1;
+		count = count + 1;
+	}
+	if (count > 11)
+		return (NO);
+	else
+		return (YES);
+}
+
 int	ft_set_data_bonus(t_data *data, char **argv)
 {
 	int	i;
@@ -43,13 +65,14 @@ int	ft_set_data_bonus(t_data *data, char **argv)
 	while (argv[++i] != NULL)
 	{
 		if (ft_is_integer(ft_atoll(argv[i])) == YES
-			&& ft_is_duplicate(ft_atoll(argv[i]), block, data->a) == NO)
+			&& ft_is_duplicate(ft_atoll(argv[i]), block, data->a) == NO
+			&& ft_is_it_really_a_int(argv[i]) == YES)
 		{
 			data->a[block++] = ft_atoll(argv[i]);
 		}
 		else
 			return (KO);
 	}
-	data->error_code = 0;
+	data->error_code = ft_find_biggest(data->a, data->len_a) + 1;
 	return (OK);
 }
