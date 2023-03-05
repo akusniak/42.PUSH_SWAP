@@ -51,7 +51,7 @@ int	ft_find_receiver(int candidat, t_data *data, t_data *hide)
 	if (candidat > stack_a_maximum)
 		return (stack_a_minimum);
 	else
-		return (ft_find_neighbor_top(candidat_index, data, hide, VALUE));
+		return (ft_find_neighbor_top(candidat_index, data, hide, VALUE));//rajouter une comparation avec neighbor bot ???
 }
 
 int	ft_find_neighbor_top(int candidat_index, t_data *data,
